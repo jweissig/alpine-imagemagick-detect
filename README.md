@@ -1,6 +1,6 @@
 ### Usage
 
-Extract media metadata to JSON format using FFmpeg
+Extract image metadata to JSON format using ImageMagick
 
 ##### Build go app for linux (from mac)
 
