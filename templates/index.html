@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <link rel="stylesheet" href="/static/pure-min.css">
+    <link rel="stylesheet" href="/static/grids-responsive-min.css">
+    <link rel="stylesheet" href="/static/dropzone.css">
+    <link rel="stylesheet" href="/static/highlight-9.13.1.min.css">
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/dropzone.js"></script>
+    <script src="/static/highlight-9.13.1.min.js"></script>
+    <style media="screen">
+      body {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      a {
+      	word-wrap: break-word;
+      }
+      .hl {
+        background-color: rgb(255, 234, 133);
+        padding: 5px;
+      }
+    </style>
+</head>
+
+<body>
+
+  <div class="pure-g">
+
+    <div class="pure-u-1 pure-u-sm-1">
+
+      <h3>Upload Image Files</h3>
+
+      <form action="/upload" class="dropzone" id="my-awesome-dropzone" style="margin-top:10px;">
+      </form>
+
+      <h2>Results</h2>
+      <div class="container">
+        <div class="inner"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+
+  // https://highlightjs.org/usage/
+  // for json highlighting
+  hljs.initHighlightingOnLoad();
+
+  // http://api.jquery.com/prepend/
+  Dropzone.autoDiscover = false;
+  var myDropzone = new Dropzone("#my-awesome-dropzone", {
+      maxFilesize: 1024, // MB
+      init: function() {
+          this.on("success", function(file, responseText) {
+              $( ".inner" ).prepend( "<pre><code class=\"json\">" + responseText + "</pre>" );
+              $( ".inner" ).prepend( "<p>" + file.name + "</p>" );
+              // re-init hljs for newly added content
+              hljs.initHighlighting.called = false;
+              hljs.initHighlighting();
+          });
+      }
+  });
+  </script>
+
+</body>
+</html>
