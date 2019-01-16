@@ -2,6 +2,8 @@
 
 Extract image metadata to JSON format using ImageMagick
 
+![screenshot](https://raw.githubusercontent.com/jweissig/alpine-imagemagick-detect/master/templates/screenshot.png)
+
 ##### Build go app for linux (from mac)
 
 ```sh
