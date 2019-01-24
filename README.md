@@ -23,7 +23,7 @@ https://hub.docker.com/r/jweissig/alpine-imagemagick-detect
 
 ```sh
 docker pull jweissig/alpine-imagemagick-detect
-docker run -p 5000:5000 --rm jweissig/alpine-imagemagick-detect
+docker run -it -p 5000:5000 --rm jweissig/alpine-imagemagick-detect
 ```
 
 ##### Connect to localhost
