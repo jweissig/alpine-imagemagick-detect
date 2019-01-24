@@ -1,6 +1,6 @@
 ### Usage
 
-Extract image metadata to JSON format using ImageMagick
+[Extract image metadata to JSON format using ImageMagick (screencast)](https://sysadmincasts.com/episodes/53-extracting-image-metadata-to-json-using-imagemagick)
 
 ![screenshot](https://raw.githubusercontent.com/jweissig/alpine-imagemagick-detect/master/templates/screenshot.png)
 
